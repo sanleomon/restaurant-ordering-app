@@ -73,7 +73,7 @@ main {
     margin-top: 9px;
 }
 
-button {
+.add-btn {
     margin-left: auto;
     height: 50px;
     width: 50px;
@@ -84,5 +84,72 @@ button {
     font-family: 'Inter', sans-serif;
     font-size: 32px;
     font-weight: 200;
+    line-height: 24px;
+}
+
+#order h2{
+    text-align: center;
+    font-size: 28px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.order-item-info {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.order-item-name {
+    font-size: 28px;
+    line-height: 16.8px;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #BBBBBB;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+#order-item-price {
+    margin-top: 31px;
+    margin-bottom: 53px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #393333;
+}
+
+#order-item-price p {
+    margin: 0;
+}
+
+#order-item-price :first-child {
+    font-size: 28px;
+}
+
+.price, #total-price {
+    font-size: 20px;
+}
+
+#complete-order-btn {
+    border-radius: 3px;
+    background-color: #16DB99;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    height: 60px;
+    width: 100%;
+    border: none;
     line-height: 24px;
 }

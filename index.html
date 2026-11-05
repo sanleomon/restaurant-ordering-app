@@ -12,9 +12,35 @@
         </header>
 
         <main>
-            <div id="menu">
+            <div id="menu"></div>
 
-            </div>
+            <section id="order">
+                <h2>Your order</h2>
+
+                <div id="order-items">
+                    <div class="order-item">
+                        <div class="order-item-info">
+                            <span class="order-item-name">Pizza</span>
+                            <button class="remove-btn">remove</button>
+                        </div>
+                        <span class="price">$14</span>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-item-info">
+                            <span class="order-item-name">Beer</span>
+                            <button class="remove-btn">remove</button>
+                        </div>
+                        <span class="price">$12</span>
+                    </div>
+                </div>
+
+                <div id="order-item-price">
+                    <p>Total price:</p>
+                    <p id="total-price">$26</p>
+                </div>
+
+                <button id="complete-order-btn">Complete order</button>
+            </section>
         </main>
 	<script src="index.js" type="module"></script>
     </body>

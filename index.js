@@ -13,7 +13,7 @@ function renderMenu(){
                 <p class="menu-item-info-ingredients">${menuItem.ingredients.join(', ')}</p>
                 <p class="menu-item-info-price">$${menuItem.price}</p>
             </div>
-            <button>+</button>
+            <button class="add-btn">+</button>
         </div>`
     })
     menu.innerHTML = menuList
