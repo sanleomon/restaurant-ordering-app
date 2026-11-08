@@ -41,7 +41,25 @@
 
                 <button id="complete-order-btn">Complete order</button>
             </section>
+
+            <section id="order-confirmation">
+                <p>Thanks, James! Your order is on its way!</p>
+            </section>
         </main>
+
+        <form id="payment-modal">
+            <h2>Enter card details</h2>
+            <div class="payment-fields">
+                <input id="payment-name" type="text" placeholder="Enter your name" 
+                    aria-label="Enter your name" required>
+                <input id="payment-card-number" type="text" placeholder="Enter card number" 
+                    aria-label="Enter card number" required>
+                <input id="payment-cvv" type="text" placeholder="Enter CVV" 
+                    aria-label="Enter CVV" required>
+            </div>
+
+            <button id="pay-btn">Pay</button>
+        </form>
 	<script src="index.js" type="module"></script>
     </body>
 </html>
