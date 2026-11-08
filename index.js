@@ -1,6 +1,7 @@
 import { menuArray } from "./data.js"
 
 const menu = document.getElementById('menu')
+const orderContainer = document.getElementById('order')
 
 function renderMenu(){
     let menuList = ''
@@ -25,6 +26,7 @@ let order = []
 
 menu.addEventListener('click', function(e){
     if(e.target.classList.contains('add-btn')){
+        document.getElementById('order-confirmation').style.display = 'none'
         order.push(menuArray.find(function(menuItem){
             return menuItem.id === Number(e.target.dataset.id)
         }))
@@ -50,20 +52,38 @@ function renderOrder(){
 
     document.getElementById('order-items').innerHTML = orderList
     document.getElementById('total-price').textContent = `$${totalPrice}`
-    
+
     if(order.length > 0){
-        document.getElementById('order').style.display = 'block'
+        orderContainer.style.display = 'block'
     } else {
-        document.getElementById('order').style.display = 'none'
+        orderContainer.style.display = 'none'
     }
 }
 
 document.getElementById('order-items').addEventListener('click', function(e){
     if(e.target.classList.contains('remove-btn')){
-        console.log(e.target.dataset.index)
         order = order.filter(function(orderItem, index){
-            return index != Number(e.target.dataset.index)
+            return index !== Number(e.target.dataset.index)
         })
         renderOrder()
     }
+})
+
+const paymentModal = document.getElementById('payment-modal')
+
+document.getElementById('complete-order-btn').addEventListener('click', function(){
+    paymentModal.style.display = 'block'
+})
+
+paymentModal.addEventListener('submit', function(e){
+    e.preventDefault()
+    const customerName = document.getElementById('payment-name').value
+    document.querySelector('#order-confirmation p').textContent = 
+        `Thanks, ${customerName}! Your order is on its way!`
+    
+    paymentModal.style.display = 'none'
+    paymentModal.reset()
+    orderContainer.style.display = 'none'
+    order = []
+    document.getElementById('order-confirmation').style.display = 'flex'
 })

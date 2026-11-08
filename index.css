@@ -153,6 +153,7 @@ main {
     font-weight: bold;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 #complete-order-btn {
@@ -234,4 +235,5 @@ main {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    cursor: pointer;
 }
