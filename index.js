@@ -4,6 +4,7 @@ const menu = document.getElementById('menu')
 const orderContainer = document.getElementById('order')
 const paymentModal = document.getElementById('payment-modal')
 const modalOverlay = document.getElementById('modal-overlay')
+const themeToggleBtn = document.getElementById('theme-toggle-btn')
 
 let order = []
 
@@ -56,6 +57,15 @@ function closePaymentModal(){
     paymentModal.reset()
 }
 
+themeToggleBtn.addEventListener('click', function(){
+    document.body.classList.toggle('dark-mode')
+    if(document.body.classList.contains('dark-mode')){
+        themeToggleBtn.textContent = '☀️'
+    } else{
+        themeToggleBtn.textContent = '🌙'
+    }
+})
+
 menu.addEventListener('click', function(e){
     if(e.target.classList.contains('add-btn')){
         document.getElementById('order-confirmation').style.display = 'none'
@@ -87,9 +97,9 @@ document.getElementById('close-modal-btn').addEventListener('click', function(){
 paymentModal.addEventListener('submit', function(e){
     e.preventDefault()
     const customerName = document.getElementById('payment-name').value
-    document.querySelector('#order-confirmation p').textContent = 
+    document.querySelector('#order-confirmation p').textContent =
         `Thanks, ${customerName}! Your order is on its way!`
-    
+
     closePaymentModal()
     orderContainer.style.display = 'none'
     order = []
