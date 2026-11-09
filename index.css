@@ -1,8 +1,11 @@
+/* General styles */
+
 body {
     margin: 0;
     font-family: 'Smythe', sans-serif;
-    position: relative;
 } 
+
+/* Header */
 
 header {
     background-image: url('./images/header-bg.png');
@@ -36,6 +39,8 @@ main {
     width: 600px;
     padding: 67px 46px 0 46px;
 }
+
+/* Menu */
 
 .menu-item {
     display: flex;
@@ -89,6 +94,8 @@ main {
     cursor: pointer;
 }
 
+/* Order summary */
+
 #order {
     display: none;
 }
@@ -139,7 +146,7 @@ main {
     margin: 0;
 }
 
-#order-item-price :first-child {
+#order-item-price > :first-child {
     font-size: 28px;
 }
 
@@ -164,6 +171,8 @@ main {
     line-height: 24px;
 }
 
+/* Order confirmation */
+
 #order-confirmation {
     display: none;
     justify-content: center;
@@ -181,18 +190,40 @@ main {
     margin: 0;
 }
 
+/* Payment modal */
+
+#modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
 #payment-modal {
     display: none;
     background-color: white;
     width: 524px;
     height: 542.24px;
     border-radius: 3.89px;
-    position: absolute;
-    top: 292px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
     left: 38px;
     box-sizing: border-box;
     padding-top: 47.32px;
     box-shadow: 5.19px 5.19px 255.44px 0 rgba(0, 0, 0, 0.5);
+    z-index: 11;
+}
+
+#close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 #payment-modal h2 {
@@ -231,9 +262,6 @@ main {
     height: 71.3px;
     width: 475.91px;
     line-height: 31.1px;
-    margin-top: 46.44px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 46.44px auto 0;
     display: block;
-    cursor: pointer;
 }

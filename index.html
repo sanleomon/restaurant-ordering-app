@@ -21,7 +21,7 @@
 
                 <div id="order-item-price">
                     <p>Total price:</p>
-                    <p id="total-price">$26</p>
+                    <p id="total-price">$0</p>
                 </div>
 
                 <button id="complete-order-btn">Complete order</button>
@@ -32,15 +32,21 @@
             </section>
         </main>
 
+
+        <div id="modal-overlay"></div>
+
         <form id="payment-modal">
+            <button type="button" id="close-modal-btn">x</button>
             <h2>Enter card details</h2>
             <div class="payment-fields">
                 <input id="payment-name" type="text" placeholder="Enter your name" 
-                    aria-label="Enter your name" required>
+                    aria-label="Enter your name" pattern=".*\S.*" required>
                 <input id="payment-card-number" type="text" placeholder="Enter card number" 
-                    aria-label="Enter card number" required>
+                    aria-label="Enter card number" inputmode="numeric" pattern="[0-9]{13,19}"
+                    maxlength="19" required>
                 <input id="payment-cvv" type="text" placeholder="Enter CVV" 
-                    aria-label="Enter CVV" required>
+                    aria-label="Enter CVV" inputmode="numeric" pattern="[0-9]{3,4}"
+                    maxlength="4" required>
             </div>
 
             <button id="pay-btn">Pay</button>
