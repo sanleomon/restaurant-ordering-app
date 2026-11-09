@@ -41,7 +41,7 @@ This project was created to practice:
 
 ## ▶️ Live Demo
 
-Coming soon.
+[View Live Demo](https://urban-bites-sm.netlify.app/)
 
 ## 📂 Installation
 
