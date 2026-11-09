@@ -1,6 +1,6 @@
 {
-  "name": "Scrim-s02tj66",
-  "description": "https://scrimba.com/fullstack-path-c0fullstack/~0ie",
+  "name": "restaurant-ordering-app",
+  "description": "A restaurant ordering app built with HTML, CSS, and JavaScript.",
   "scripts": {
     "start": "vite",
     "dev": "vite",
