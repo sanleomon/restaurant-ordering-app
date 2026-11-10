@@ -59,11 +59,13 @@ header {
     padding-left: 46px;
     padding-top: 46px;
     height: 167px;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     background-size: cover;
     background-position: center;
     color: white;
     position: relative;
+    margin: 0 auto;
 }
 
 header h1, header p {
@@ -93,8 +95,10 @@ header p{
 
 main {
     box-sizing: border-box;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     padding: 67px 46px 0 46px;
+    margin: 0 auto;
 }
 
 /* Menu */
@@ -265,8 +269,8 @@ main {
     border-radius: 3.89px;
     position: fixed;
     top: 50%;
-    transform: translateY(-50%);
-    left: 38px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding-top: 47.32px;
     box-shadow: 5.19px 5.19px 255.44px 0 rgba(0, 0, 0, 0.5);
@@ -321,4 +325,28 @@ main {
     line-height: 31.1px;
     margin: 46.44px auto 0;
     display: block;
+}
+
+@media (max-width: 480px) {
+    main{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .menu-item {
+        gap: 15px;
+    }
+
+    #payment-modal{
+        width: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #payment-name,
+    #payment-card-number,
+    #payment-cvv,
+    #pay-btn {
+        width: 90%;
+    }
 }
