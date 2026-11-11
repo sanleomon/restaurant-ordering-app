@@ -25,6 +25,40 @@ function renderMenu(){
     menu.innerHTML = menuList
 }
 
+function calculateDiscount(order, menuArray){
+    let hamburgerCount = 0
+    let beerCount = 0
+
+    const discountRate = 0.10
+
+    const hamburger = menuArray.find(function(item){
+        return item.name === 'Hamburger'
+    })
+
+    const beer = menuArray.find(function(item){
+        return item.name === 'Beer'
+    })
+
+    order.forEach(function(orderItem){
+        if(orderItem.name === 'Hamburger'){
+            hamburgerCount++
+        }
+
+        if(orderItem.name === 'Beer'){
+            beerCount++
+        }
+    })
+
+    const comboCount = Math.min(hamburgerCount, beerCount)
+    const discount = comboCount * (hamburger.price + beer.price) * discountRate
+
+    return {
+        comboCount: comboCount,
+        discount: discount,
+        discountRate: discountRate
+    }
+}
+
 function renderOrder(){
     let orderList = ''
     let totalPrice = 0
@@ -38,11 +72,24 @@ function renderOrder(){
             </div>
             <span class="price">$${orderItem.price}</span>
         </div>`
+
         totalPrice += orderItem.price
     })
 
+    const mealDeal = calculateDiscount(order, menuArray)
+
+    if(mealDeal.comboCount > 0){
+        orderList += `
+        <div class="order-item discount-item">
+            <span>Meal deal discount (${mealDeal.discountRate * 100}%) x ${mealDeal.comboCount}</span>
+            <span>-$${mealDeal.discount.toFixed(2)}</span>
+        </div>`
+    }
+
+    totalPrice -= mealDeal.discount
+
     document.getElementById('order-items').innerHTML = orderList
-    document.getElementById('total-price').textContent = `$${totalPrice}`
+    document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`
 
     if(order.length > 0){
         orderContainer.style.display = 'block'

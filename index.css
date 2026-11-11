@@ -194,6 +194,12 @@ main {
     cursor: pointer;
 }
 
+.discount-item {
+    color: #16a34a;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
 #order-item-price {
     margin-top: 31px;
     margin-bottom: 53px;
@@ -212,6 +218,7 @@ main {
 }
 
 .price, #total-price {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
 }
 
